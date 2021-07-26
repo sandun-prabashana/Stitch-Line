@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>How to Design Login & Registration Form Transition</title>
+	<title>Stitch-Line</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="style.css">
@@ -9,17 +9,19 @@
 </head>
 <body>
   <div class="cont">
+    <section id="view1">
     <div class="form sign-in">
       <h2>Sign In</h2>
       <label>
         <span>User Name</span>
-        <input type="text" name="name" required="">
+        <input id="login_uname" type="text" name="name" required="">
+        <span id="login_span_uname" class="lbl-error"></span>
       </label>
       <label>
         <span>Password</span>
-        <input type="password" name="password" required="">
+        <input id="login_password" type="password" name="password" required="">
       </label>
-      <button class="submit" type="button">Sign In</button>
+      <button id="btnLogin" class="submit" type="button">Sign In</button>
       <p class="forgot-pass">Forgot Password ?</p>
 
       <div class="social-media">
@@ -85,6 +87,21 @@
         </form>
       </div>
     </div>
+    </section>
+
+    <section id="view2" class="bgimg">
+      <div class="middle">
+        <h1>Hello User,</h1>
+        <h1 id="user"></h1>
+      </div>
+    </section>
+
+    <section id="view3" class="bgimg1">
+      <div class="middle">
+        <h1>Hello Admin,</h1>
+        <h1 id="admin"></h1>
+      </div>
+    </section>
   </div>
 
   <script src="js/jquery-3.6.0.min.js"></script>

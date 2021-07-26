@@ -31,7 +31,7 @@ public class UserController {
         return new ResponseEntity(new StandardResponse("200","Done",all), HttpStatus.CREATED);
     }
 
-    @GetMapping("/onebyuserName/{userName}")
+    @GetMapping("/userName/{userName}")
     public User getOneuserByuserName(@PathVariable String userName) {
         return userService.getOneuserByuserName(userName);
     }

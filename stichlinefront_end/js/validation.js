@@ -1,4 +1,18 @@
-
+var LName=/^[A-Z]{1}[a-z]{1,9}$/;
+$('#login_uname').on('keydown',function (event) {
+    var input=(event.key);
+    let inputName=$('#login_uname').val();
+    if (LName.test(inputName)){
+        $('#login_span_uname').text('');
+        // $('#custName').css('border','2px solid lime');
+        if (input=="Enter"){
+        }
+    }else {
+        // $('#custName').css('border','2px solid red');
+        $('#login_span_uname').text('Data format Is Wrong(Ex:-Name)');
+        $('#login_uname').focus();
+    }
+});
 
 var Name=/^[A-Z]{1}[a-z]{1,9}$/;
 $('#uname').on('keydown',function (event) {
@@ -67,3 +81,4 @@ $('#email').on('keydown',function (event) {
         $('#email').focus();
     }
 });
+

@@ -1,3 +1,28 @@
+var v1=document.getElementById('view1');
+var v2=document.getElementById('view2');
+var v3=document.getElementById('view3');
+
+view();
+
+function view(){
+    v1.style.display='block';
+    v2.style.display='none';
+    v3.style.display='none';
+}
+
+function view1(){
+    v1.style.display='none';
+    v2.style.display='block';
+    v3.style.display='none';
+}
+
+function view2(){
+    v1.style.display='none';
+    v2.style.display='none';
+    v3.style.display='block';
+}
+
+
 $('#btnSignup').click(function () {
     let size=$('#uname').val().length;
     let size1=$('#fname').val().length;
@@ -39,6 +64,40 @@ $('#btnSignup').click(function () {
 
             }
         })
+    }
+});
+
+$('#btnLogin').on('click', function () {
+    let size=$('#login_uname').val().length;
+    let size1=$('#login_password').val().length;
+    if ((size==0) || (size1==0)){
+        swal("Field cannot be empty", "Error");
+    }else {
+    let userName = $('#login_uname').val();
+    let password = $('#login_password').val();
+
+    $.ajax({
+        method: "GET",
+        url: "http://localhost:8079/api/v1/user/userName/"+userName,
+        async: true,
+        success:function (resp) {
+            console.log(resp.password);
+            if (resp.password == password) {
+                if (resp.state == "USER"){
+                    console.log("user");
+                    view1();
+                    document.getElementById("user").innerHTML = resp.name;
+                }else {
+                    console.log("admin");
+                    view2();
+                    document.getElementById("admin").innerHTML = resp.name;
+                }
+            }else {
+                    swal("Login First ", "Error");
+            }
+        }
+
+    });
     }
 });
 
