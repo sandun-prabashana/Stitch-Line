@@ -50,7 +50,7 @@ h2{
 label{
   display: block;
   width: 260px;
-  margin: 15px auto 0;
+  margin: 10px auto 0;
   text-align: center;
 }
 
@@ -84,7 +84,7 @@ button{
 }
 
 .submit{
-  margin-top: 40px;
+  margin-top: 20px;
   margin-bottom: 30px;
   text-transform: uppercase;
   font-weight: 600;
@@ -309,4 +309,9 @@ button{
 .cont.s-signup .sign-up{
   -webkit-transform:translate3d(0, 0, 0);
           transform:translate3d(0, 0, 0);
+}
+
+.lbl-error {
+  color: red;
+  font-size: 0.6em;
 }
